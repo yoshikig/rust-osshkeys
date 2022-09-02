@@ -90,7 +90,7 @@ pub(crate) enum PublicKeyType {
 }
 
 #[allow(clippy::upper_case_acronyms)]
-pub(crate) enum KeyPairType {
+pub enum KeyPairType {
     RSA(rsa::RsaKeyPair),
     DSA(dsa::DsaKeyPair),
     ECDSA(ecdsa::EcDsaKeyPair),
