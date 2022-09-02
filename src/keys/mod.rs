@@ -173,7 +173,7 @@ impl PublicKey {
         stringify_pem_pubkey(self)
     }
 
-    fn inner_key(&self) -> &dyn PublicParts {
+    pub fn inner_key(&self) -> &dyn PublicParts {
         match &self.key {
             PublicKeyType::RSA(key) => key,
             PublicKeyType::DSA(key) => key,
@@ -402,7 +402,7 @@ impl KeyPair {
         })
     }
 
-    fn inner_key(&self) -> &dyn PrivateParts {
+    pub fn inner_key(&self) -> &dyn PrivateParts {
         match &self.key {
             KeyPairType::RSA(key) => key,
             KeyPairType::DSA(key) => key,
@@ -411,7 +411,7 @@ impl KeyPair {
         }
     }
 
-    fn inner_key_pub(&self) -> &dyn PublicParts {
+    pub fn inner_key_pub(&self) -> &dyn PublicParts {
         match &self.key {
             KeyPairType::RSA(key) => key,
             KeyPairType::DSA(key) => key,
